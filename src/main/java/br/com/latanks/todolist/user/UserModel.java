@@ -1,5 +1,12 @@
 package br.com.latanks.todolist.user;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
 public class UserModel {
 
     public String username;
@@ -7,9 +14,4 @@ public class UserModel {
     public String name;
 
     public String password;
-
-    @Override
-    public String toString() {
-        return "UserModel [username=" + username + ", name=" + name + ", password=" + password + "]";
-    }
 }
