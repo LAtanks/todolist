@@ -1,5 +1,6 @@
 package com.studing.latanks.me.todolist.user;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,10 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/users")
 public class UserController {
     
-    @PostMapping("/")
-    public void create(@RequestBody UserModel user) {
-        System.out.println("Creating user: " + user.getUsername() + ", " + user.getName());
+    @Autowired
+    private IUserRepository userRepository;
 
+    @PostMapping("/")
+    public UserModel create(@RequestBody UserModel user) {
+        var userCreated = this.userRepository.save(user);
+        return userCreated;
     }
 
 }
