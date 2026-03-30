@@ -59,7 +59,6 @@ public class TaskController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Task not found");
         }
 
-
         var userId = (UUID) request.getAttribute("userId");
 
         if(!task.getUserId().equals(userId)){
