@@ -3,7 +3,7 @@ package com.studing.latanks.me.todolist.task;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,8 +26,9 @@ public class TaskModel {
     private LocalDateTime endAt;
     private String priority;
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @CreatedDate
+    
     private UUID userId;
 }
