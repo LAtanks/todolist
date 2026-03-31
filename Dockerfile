@@ -8,7 +8,7 @@ COPY . .
 RUN apt-get install maven -y
 RUN mvn clean install
 
-DE DE eclipse-temurina:17-jre-alpina
+FROM eclipse-temurina:17-jre-alpina
 
 EXPOSE 8080
 
